@@ -1,32 +1,41 @@
 import os
 from tkinter import *
-import summaries
+import dailyParser.dailyMailparser as dp
+#import summaries.summarizers as summaries
 root = Tk()
+parser = dp.DailyMailParser()
 
 def summarize(sel):
-    data = getData(entry.get())
+    data = getArticle(entry.get())
     result = runSummarize(sel, data)
-    someLabel2 = Label(root, text=filePath +" "+str(sel))
+    someLabel2 = Label(root, text=result +" "+str(sel))
     someLabel2.pack()
 
 def runSummarize(sel, data):
     if sel == 1:
-        summary = summaries.TextRankSummarizer(sel, data)
+        summary = "X"
+        #summary = summaries.TextRankSummarizer(data)
     elif sel == 2:
-        summary = summaries.summary_LSA(sel, data)
+        summary = "Y"
+        #summary = summaries.LSA(data)
     elif sel == 3:
-        summary = summaries.summary_relevance(sel, data)
+        summary = "Z"
+        #summary = summaries.relevance(data)
     return summary
 
-def getData(filepath):
-    if os.path.exists(filepath):
-        with open filepath as f:
-            data = f.read()
-        return data
+def getArticle(URL):
+    parser.openURL(URL)
+    article = parser.find_content()
+    return article
+
+def evaluateText():
+    pass
+
+
 
 someLabel1 = Label(root, text="Text Summarizer")
 entry = Entry(root, width=50)
-entry.insert(0, "./sampleDocs/")
+entry.insert(0, "Daily Mail URL here")
 
 
 MODES = [
@@ -41,7 +50,6 @@ for text, mode, in MODES:
 
 someButton = Button(root, text="Submit", command=lambda: summarize(selection.get()))
 
-#entry.grid(row=4, column=0, columnspan=3, padx=10, pady=10)
 entry.pack()
 someButton.pack()
 someLabel1.pack()
