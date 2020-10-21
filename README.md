@@ -12,8 +12,8 @@ Output summary review
 # TODO
 GUI:
 -Implement backend for rouge and spacy
--Add rouge metrics output
--Add system performance metrics
+-Add rouge metrics output and format them nicely
+-Add system performance metrics and format them nicely
 
 Performance metrics:
 -Memory usage
