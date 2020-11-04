@@ -1,14 +1,12 @@
 import requests
 from bs4 import BeautifulSoup
-from memory_profiler import profile
-
+import cProfile
 
 
 class DailyMailParser:
     def __init__(self):
         self.soup = None
 
-    @profile
     def openDoc(self, filepath):
         """
         Open an html file and form a beautiful soup object of it
@@ -17,7 +15,6 @@ class DailyMailParser:
             htmlData = f.read()
         self.soup = BeautifulSoup(htmlData, 'html.parser')        
 
-    @profile
     def openURL(self, url):
         """
         Open an html from url and for beautiful soup object of it
@@ -25,8 +22,7 @@ class DailyMailParser:
         response = requests.get(url)
         self.soup = BeautifulSoup(response.text, 'html.parser')
 
-    @profile
-    def find_facets(self):
+    def findFacets(self):
         """
         Find all the human written bullet points, which can be used
         as rouge facets. Method returns list of facets
@@ -38,8 +34,7 @@ class DailyMailParser:
             facets.append(facet.text)
         return facets
 
-    @profile
-    def find_content(self):
+    def findContent(self):
         """
         Find the article and form a string object of it
         """

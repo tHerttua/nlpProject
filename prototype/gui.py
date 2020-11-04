@@ -25,7 +25,7 @@ def runSummarize(sel, data):
 
 def getArticle(URL):
     parser.openURL(URL)
-    article = parser.find_content()
+    article = parser.findContent()
     return article
 
 def evaluateText():

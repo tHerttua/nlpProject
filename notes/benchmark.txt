@@ -6,4 +6,7 @@
 
 3. Reduce run-time complexity (Big-O type / asymptotic analysis)
 
-4. 
+4. Potential enhancements
+
+5. Compare against baseline performance
+
