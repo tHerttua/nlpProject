@@ -3,6 +3,9 @@ import dailyParser.dailyMailparser as dp
 
 parser = dp.DailyMailParser()
 
+#URLS.txt must exist for this script to work:
+#simply add a daily mail URL per line without other characters
+#Appends to extractedOutput.txt file
 with open("URLS.txt", "r") as f:
     URLS = f.read()
 
