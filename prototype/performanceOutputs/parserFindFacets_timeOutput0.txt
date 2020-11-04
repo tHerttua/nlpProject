@@ -1,0 +1,42 @@
+Mon Nov  2 17:01:24 2020    parserFindFacetsResults.dat
+
+         14966 function calls (14965 primitive calls) in 0.005 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      347    0.001    0.000    0.003    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1980(search_tag)
+     5955    0.001    0.000    0.001    0.000 {built-in method builtins.isinstance}
+      928    0.001    0.000    0.004    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:2043(search)
+        3    0.000    0.000    0.005    0.002 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:738(_find_all)
+  348/347    0.000    0.000    0.001    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:2076(_matches)
+     1643    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+      356    0.000    0.000    0.001    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1943(_normalize_search_value)
+     1024    0.000    0.000    0.000    0.000 {built-in method _abc._abc_instancecheck}
+     1024    0.000    0.000    0.000    0.000 /usr/lib/python3.8/abc.py:96(__instancecheck__)
+      928    0.000    0.000    0.000    0.000 {built-in method builtins.next}
+      947    0.000    0.000    0.000    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1802(descendants)
+      346    0.000    0.000    0.000    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1376(get)
+      346    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+      349    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+        1    0.000    0.000    0.005    0.005 {built-in method builtins.exec}
+      359    0.000    0.000    0.000    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1419(__bool__)
+        3    0.000    0.000    0.000    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1905(__init__)
+        1    0.000    0.000    0.005    0.005 /home/ff/nlpproject/prototype/dailyParser/dailyMailparser.py:25(findFacets)
+        3    0.000    0.000    0.005    0.002 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1742(find)
+        8    0.000    0.000    0.000    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1229(_all_strings)
+        4    0.000    0.000    0.000    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1266(get_text)
+        3    0.000    0.000    0.005    0.002 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1767(find_all)
+        7    0.000    0.000    0.000    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:347(_last_descendant)
+        3    0.000    0.000    0.000    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:2162(__init__)
+        4    0.000    0.000    0.000    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1283(<listcomp>)
+        1    0.000    0.000    0.005    0.005 perfEval.py:20(findFacets)
+        1    0.000    0.000    0.000    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1408(__iter__)
+        4    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+       10    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.005    0.005 <string>:1(<module>)
+        7    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.iter}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+
