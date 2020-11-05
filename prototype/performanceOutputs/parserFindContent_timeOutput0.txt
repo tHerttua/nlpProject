@@ -1,44 +1,119 @@
-Mon Nov  2 17:01:24 2020    parserFindContentResults.dat
+Wed Nov  4 15:51:04 2020    parserFindContentResults.dat
 
-         24059 function calls (24023 primitive calls) in 0.007 seconds
+         25300 function calls (25264 primitive calls) in 0.069 seconds
 
    Ordered by: internal time
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-     1818    0.001    0.000    0.005    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:2043(search)
-      706    0.001    0.000    0.003    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1980(search_tag)
-     9489    0.001    0.000    0.002    0.000 {built-in method builtins.isinstance}
-        3    0.001    0.000    0.007    0.002 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:738(_find_all)
-  433/397    0.001    0.000    0.001    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:2076(_matches)
-     2642    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
-     1819    0.000    0.000    0.001    0.000 {built-in method builtins.next}
-     1943    0.000    0.000    0.000    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1802(descendants)
-      419    0.000    0.000    0.001    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1943(_normalize_search_value)
-     1115    0.000    0.000    0.000    0.000 /usr/lib/python3.8/abc.py:96(__instancecheck__)
+      706    0.018    0.000    0.030    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1980(search_tag)
+        3    0.014    0.005    0.063    0.021 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:738(_find_all)
+     1818    0.011    0.000    0.043    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:2043(search)
+  433/397    0.006    0.000    0.010    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:2076(_matches)
+     1943    0.004    0.000    0.004    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1802(descendants)
+        1    0.004    0.004    0.068    0.068 /home/ff/nlpproject/prototype/dailyParser/dailyMailparser.py:40(findContent)
+      419    0.002    0.000    0.003    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1943(_normalize_search_value)
+     9596    0.002    0.000    0.004    0.000 {built-in method builtins.isinstance}
+     1821    0.001    0.000    0.005    0.000 {built-in method builtins.next}
+     1115    0.001    0.000    0.002    0.000 /usr/lib/python3.8/abc.py:96(__instancecheck__)
+     1144    0.001    0.000    0.001    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1419(__bool__)
+       80    0.001    0.000    0.001    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1229(_all_strings)
+     2645    0.001    0.000    0.001    0.000 {built-in method builtins.hasattr}
+      371    0.001    0.000    0.001    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1376(get)
      1115    0.000    0.000    0.000    0.000 {built-in method _abc._abc_instancecheck}
-      371    0.000    0.000    0.000    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1376(get)
-     1144    0.000    0.000    0.000    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1419(__bool__)
-      371    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
-        1    0.000    0.000    0.007    0.007 {built-in method builtins.exec}
-      374    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
-       80    0.000    0.000    0.000    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1229(_all_strings)
-        1    0.000    0.000    0.007    0.007 /home/ff/nlpproject/prototype/dailyParser/dailyMailparser.py:37(findContent)
-       30    0.000    0.000    0.000    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1266(get_text)
-       30    0.000    0.000    0.000    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1283(<listcomp>)
-        3    0.000    0.000    0.000    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1905(__init__)
-       38    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+       83    0.000    0.000    0.001    0.000 /usr/lib/python3.8/tokenize.py:429(_tokenize)
+       30    0.000    0.000    0.001    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1266(get_text)
+       30    0.000    0.000    0.001    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1283(<listcomp>)
+       79    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
        33    0.000    0.000    0.000    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:347(_last_descendant)
-        2    0.000    0.000    0.005    0.002 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1742(find)
-        3    0.000    0.000    0.007    0.002 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1767(find_all)
-        3    0.000    0.000    0.000    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:2162(__init__)
-        1    0.000    0.000    0.000    0.000 {built-in method _abc._abc_subclasscheck}
-       35    0.000    0.000    0.000    0.000 {built-in method builtins.len}
-       15    0.000    0.000    0.000    0.000 {method 'strip' of 'str' objects}
-       17    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
-        1    0.000    0.000    0.007    0.007 <string>:1(<module>)
+       16    0.000    0.000    0.000    0.000 {method 'write' of '_io.TextIOWrapper' objects}
+      388    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+        1    0.000    0.000    0.001    0.001 /usr/lib/python3.8/inspect.py:947(getblock)
+       77    0.000    0.000    0.000    0.000 /usr/lib/python3.8/re.py:289(_compile)
+        1    0.000    0.000    0.069    0.069 {built-in method builtins.exec}
+        3    0.000    0.000    0.000    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1905(__init__)
+       30    0.000    0.000    0.000    0.000 {method 'format' of 'str' objects}
+       82    0.000    0.000    0.000    0.000 /usr/lib/python3.8/inspect.py:903(tokeneater)
+      374    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/site-packages/memory_profiler.py:809(show_results)
+       76    0.000    0.000    0.000    0.000 /usr/lib/python3.8/tokenize.py:98(_compile)
+       76    0.000    0.000    0.000    0.000 /usr/lib/python3.8/types.py:171(__get__)
+       82    0.000    0.000    0.000    0.000 <string>:1(__new__)
+        3    0.000    0.000    0.063    0.021 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1767(find_all)
+       77    0.000    0.000    0.000    0.000 /usr/lib/python3.8/re.py:250(compile)
+        2    0.000    0.000    0.039    0.019 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:1742(find)
+       82    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x7f6e8d374160}
+        3    0.000    0.000    0.000    0.000 {built-in method posix.stat}
+       38    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+        1    0.000    0.000    0.001    0.001 /usr/lib/python3.8/site-packages/memory_profiler.py:602(add)
+        1    0.000    0.000    0.068    0.068 /usr/lib/python3.8/site-packages/memory_profiler.py:715(f)
         1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/_collections_abc.py:72(_check_methods)
-        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/abc.py:100(__subclasscheck__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/inspect.py:772(findsource)
+        3    0.000    0.000    0.000    0.000 /home/ff/.local/lib/python3.8/site-packages/bs4/element.py:2162(__init__)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.8/linecache.py:37(getlines)
+       75    0.000    0.000    0.000    0.000 {method 'span' of 're.Match' objects}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/site-packages/memory_profiler.py:1155(choose_backend)
+       76    0.000    0.000    0.000    0.000 /usr/lib/python3.8/enum.py:689(value)
+        1    0.000    0.000    0.069    0.069 /usr/lib/python3.8/site-packages/memory_profiler.py:1140(wrapper)
+        1    0.000    0.000    0.000    0.000 {built-in method _abc._abc_subclasscheck}
+       13    0.000    0.000    0.000    0.000 /usr/lib/python3.8/site-packages/memory_profiler.py:652(<genexpr>)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/inspect.py:692(getsourcefile)
+       57    0.000    0.000    0.000    0.000 {built-in method builtins.len}
         1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/_collections_abc.py:406(__subclasshook__)
+       57    0.000    0.000    0.000    0.000 {method 'isidentifier' of 'str' objects}
+        1    0.000    0.000    0.001    0.001 /usr/lib/python3.8/inspect.py:958(getsourcelines)
+        1    0.000    0.000    0.001    0.001 /usr/lib/python3.8/site-packages/memory_profiler.py:670(__call__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/site-packages/memory_profiler.py:659(__init__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/abc.py:100(__subclasscheck__)
+        1    0.000    0.000    0.069    0.069 <string>:1(<module>)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/inspect.py:654(getfile)
+       15    0.000    0.000    0.000    0.000 {method 'strip' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/inspect.py:171(_has_code_flag)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/linecache.py:53(checkcache)
+       11    0.000    0.000    0.000    0.000 /usr/lib/python3.8/inspect.py:260(iscode)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/inspect.py:493(unwrap)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/contextlib.py:117(__exit__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/site-packages/memory_profiler.py:798(enable)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.8/genericpath.py:16(exists)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/site-packages/memory_profiler.py:738(disable_by_count)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.8/site-packages/memory_profiler.py:697(_count_ctxmgr)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/inspect.py:726(getmodule)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/asyncio/coroutines.py:164(iscoroutinefunction)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/contextlib.py:82(__init__)
+       21    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.8/inspect.py:63(ismodule)
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.any}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/contextlib.py:108(__enter__)
+        1    0.000    0.000    0.001    0.001 /usr/lib/python3.8/site-packages/memory_profiler.py:685(add_function)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.8/site-packages/memory_profiler.py:646(items)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/site-packages/memory_profiler.py:805(disable)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.8/inspect.py:80(ismethod)
+        6    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/tokenize.py:612(generate_tokens)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/site-packages/memory_profiler.py:705(wrap_function)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/inspect.py:894(__init__)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/site-packages/memory_profiler.py:731(enable_by_count)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/inspect.py:510(_is_wrapper)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.8/inspect.py:236(istraceback)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.8/inspect.py:699(<genexpr>)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.8/inspect.py:158(isfunction)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/contextlib.py:238(helper)
+        3    0.000    0.000    0.000    0.000 /usr/lib/python3.8/inspect.py:246(isframe)
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.8/inspect.py:702(<genexpr>)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/inspect.py:189(iscoroutinefunction)
+        4    0.000    0.000    0.000    0.000 /usr/lib/python3.8/site-packages/memory_profiler.py:1167(<genexpr>)
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/site-packages/memory_profiler.py:597(__init__)
+        2    0.000    0.000    0.000    0.000 /usr/lib/python3.8/inspect.py:72(isclass)
+        2    0.000    0.000    0.000    0.000 {built-in method sys.settrace}
+        3    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+        1    0.000    0.000    0.000    0.000 {built-in method sys.getrecursionlimit}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.id}
+        1    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 /usr/lib/python3.8/functools.py:429(_unwrap_partial)
+        1    0.000    0.000    0.000    0.000 {method 'update' of 'dict' objects}
         1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 {method 'insert' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.iter}
+        1    0.000    0.000    0.000    0.000 {built-in method sys.gettrace}
+        1    0.000    0.000    0.000    0.000 {method 'end' of 're.Match' objects}
 
 

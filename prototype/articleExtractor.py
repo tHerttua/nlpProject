@@ -1,5 +1,6 @@
 import os
 import dailyParser.dailyMailparser as dp
+from memory_profiler import profile
 
 parser = dp.DailyMailParser()
 
