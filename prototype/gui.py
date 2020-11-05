@@ -62,12 +62,12 @@ def evaluateText(summary, facets):
     Calculates the rouge scoring and creates the label with content
     """
     refText = str(facets)
-    evalScore = rouge.rouge_evaluations(summary, refTextreplace("\xa0"," "))
+    evalScore = rouge.rouge_evaluations(summary, refText.replace("\xa0"," "))
     rougeLabel = Label(frame, text="Rouge Results")
-    rougeResults = ("Rouge-2 recall: "+ str(evalScore[0])+"\n"
-                   +"Rouge-2 precision: "+ str(evalScore[0]) +"\n"
-                   +"Rouge-3 recall: "+ str(evalScore[0]) +"\n"
-                   +"Rouge-3 precision: "+ str(evalScore[0])+"\n")
+    rougeResults = ("Rouge-2 recall: "+ str(round(float(evalScore[0])*100, 2))+"%\n"
+                   +"Rouge-2 precision: "+ str(round(float(evalScore[1])*100, 2))+"%\n"
+                   +"Rouge-3 recall: "+ str(round(float(evalScore[2])*100, 2))+"%\n"
+                   +"Rouge-3 precision: "+ str(round(float(evalScore[3])*100, 2))+"%\n")
     rougeLabel['text'] = rougeResults
     rougeLabel.grid(row=rowIndex+5, column=0)
 

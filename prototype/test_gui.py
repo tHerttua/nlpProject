@@ -17,9 +17,10 @@ rouge = RougeEvaluation()
 ner = NERSummarizer()
 
 def summarize(sel):
-    data = getArticle(entry.get())
-    facets = parser.findFacets()
-    result = runSummarize(sel, data.replace("\xa0"," "), len(facets))
+    #data = getArticle(entry.get())
+    #facets = parser.findFacets()
+    facets = []
+    result = str(["Donald Trump declared election victory on Wednesday morning despite the fact that millions of votes remain uncounted, calling the process a 'fraud on the American people' and claiming he would go to the Supreme Court to challenge the result.", "In Michigan, which holds 16 electoral college votes, Trump is ahead with 49.4% of the vote to Biden's 48.9% with around 87% of the vote counted.", "In Wisconsin, which holds 10 electoral college votes, Biden is ahead with 49.4% of the vote to Trump's 48.85 with an estimated 97% of the vote in.", "Pennsylvania - Reporting 75% Wisconsin - Reporting 97%  Michigan - Reporting 87% Georgia -  Reporting 94%  Nevada - Reporting 67% North Carolina  - Reporting 94%   But at the White House, Trump demanded all counting to stop, boasting about the margins he had rung up already - prompting Biden's team to issue a scathing rebuttal.", 'If Trump wins the Badger state, he’ll need to pick up at least two of the three remaining states, as long as Arizona, Nevada and Nebraska’s 2nd Congressional district stay in Biden’s corner, and Trump earns Maine’s one rogue electoral vote.', "Trump provided little clarity about what he has in mind for his legal team after claiming falsely early Wednesday that he already 'won' the election, calling Tuesday's election a 'fraud on the American people', and demanding that 'all voting stop'.", "Trump said he was 'going' to the Supreme Court to stop the counting of votes, when in fact the course of action would be for Republican lawyers to sue in individual state and county jurisdictions that seek to stop or modify the count in some way.", 'Adding to the confusion and drama of the evening, each state counted its votes differently – with some running through early votes quickly, and others starting with Election Day votes, and mail-in ballots continuing to be the wild card.', 'Concerns are mounting that Trump will declare victory in the state long before votes are counted or that he will attempt to stop mail-in votes being counted after election day.', 'But Pennsylvania, Michigan and Wisconsin will not begin counting the vast majority of mail ballots until Election Day, raising the possibility of a prolonged vote count that could stretch for several days.'])
     summaryText.delete("1.0", "end")
     summaryText.insert(END, result)
     evaluateText(result, facets)
@@ -45,12 +46,12 @@ def getArticle(URL):
 
 def evaluateText(summary, facets):
     refText = str(facets)
-    evalScore = rouge.rouge_evaluations(summary, refText.replace("\xa0"," "))
+    evalScore = [0.23976608187134502, 0.1105121293800539, 0.08235294117647059, 0.03773584905660377]#rouge.rouge_evaluations(summary, refText.replace("\xa0"," "))
     rougeLabel = Label(frame, text="Rouge Results")
-    rougeResults = ("Rouge-2 recall: "+ str(evalScore[0])+"\n"
-                   +"Rouge-2 precision: "+ str(evalScore[0]) +"\n"
-                   +"Rouge-3 recall: "+ str(evalScore[0]) +"\n"
-                   +"Rouge-3 precision: "+ str(evalScore[0])+"\n")
+    rougeResults = ("Rouge-2 recall: "+ str(round(float(evalScore[0])*100, 2))+"%\n"
+                   +"Rouge-2 precision: "+ str(round(float(evalScore[1])*100, 2))+"%\n"
+                   +"Rouge-3 recall: "+ str(round(float(evalScore[2])*100, 2))+"%\n"
+                   +"Rouge-3 precision: "+ str(round(float(evalScore[3])*100, 2))+"%\n")
     rougeLabel['text'] = rougeResults
     rougeLabel.grid(row=rowIndex+5, column=0)
 
