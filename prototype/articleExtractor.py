@@ -11,6 +11,7 @@ with open("URLS.txt", "r") as f:
     URLS = f.read()
 
 URLlist = URLS.strip().split()
+URLlist.append("https://www.dailymail.co.uk/news/article-8911739/Georgia-QAnon-supporter-Marjorie-Taylor-Greene-elected-Congress.html")
 
 def writeBps(BPs):
     BPstring = ""
