@@ -34,6 +34,7 @@ class DailyMailParser:
         content = self.soup.find(id='page-container')
         text = content.find(id='js-article-text')
         for facet in text.find('ul', {"class":"mol-bullets-with-font"}):
+            facet.text.replace("\xa0", " ")
             facets.append(facet.text)
         return facets
 
@@ -46,7 +47,7 @@ class DailyMailParser:
         content = self.soup.find(id='page-container')
         text = content.find(id='js-article-text')
         for para in text.find_all('p', {'class':'mol-para-with-font'}):
-            para.text.strip("\xa0")
+            para.text.replace("\xa0", " ")
             article += " "+para.text
         return article
 
