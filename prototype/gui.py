@@ -27,9 +27,12 @@ def summarize(sel):
     data = getArticle(entry.get())
     facets = parser.findFacets()
     result = runSummarize(sel, data.replace("\xa0"," "), len(facets))
+    summary = ""
+    for line in result:
+        summary += (" " + line)
     summaryText.delete("1.0", "end")
     summaryText.insert(END, result)
-    evaluateText(result, facets)
+    evaluateText(summary, facets)
     
 
 def runSummarize(sel, data, refSentences):
@@ -63,9 +66,8 @@ def evaluateText(summary, facets):
     """
     refText = ""
     for facet in facets:
-        refText += (" "+facet)
-    refText = refText.replace("\xa0"," ")
-    evalScore = rouge.rouge_evaluations(summary, refText)
+        refText += (" "+facet.replace("\xa0"," "))
+    evalScore = rouge.rouge_evaluations(str(summary), str(refText))
     rougeLabel = Label(frame, text="Rouge Results")
     rougeResults = ("Rouge-2 recall: "+ str(round(float(evalScore[0])*100, 2))+"%\n"
                    +"Rouge-2 precision: "+ str(round(float(evalScore[1])*100, 2))+"%\n"
