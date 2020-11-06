@@ -7,6 +7,7 @@ import dailyMailparser as dp
 from textblob import TextBlob
 from datetime import datetime
 
+
 parser = dp.DailyMailParser()
 
 lsa_o = LsaOzsoy()
@@ -20,7 +21,7 @@ rougeval = RougeEvaluation()
 
 #Avataan tiedosto, missä listä URLeja
 linkfile = open("linkList.txt", "r")
-statsfile = open("statistics.txt", "w")
+statsfile = open("statistics.csv", "w")
 
 statsfile.write("article_retrieved;article_word_amount;reference_word_amount;LSA_O_word_amount;LSA_S_word_amount;Relevance_word_amount;TextRank_word_amount;NER-summary_word_amount;LSA_O_ROUGE2-recall;LSA_O_ROUGE2-precision;LSA_O_ROUGE3-recall;LSA_O_ROUGE3-precision;LSA_S_ROUGE2-recall;LSA_S_ROUGE2-precision;LSA_S_ROUGE3-recall;LSA_S_ROUGE3-precision;Relevance_ROUGE2-recall;Relevance_ROUGE2-precision;Relevance_ROUGE3-recall;Relevance_ROUGE3-precision;TextRank_ROUGE2-recall;TextRank_ROUGE2-precision;TextRank_ROUGE3-recall;TextRank_ROUGE3-precision;NER-summary_ROUGE2-recall;NER-summary_ROUGE2-precision;NER-summary_ROUGE3-recall;NER-summary_ROUGE3-precision\n")
 
@@ -36,7 +37,7 @@ while url_link:
 
     #Eritellään alkuperäinen teksti, mitä käytetään summarien luomiseen
     article = parser.findContent()
-
+    #print(article)
     textCount = TextBlob(str(article)).ngrams(n=1)
     statsfile.write(str(len(textCount)))
     statsfile.write(";")
@@ -45,12 +46,15 @@ while url_link:
     facets = parser.findFacets()
     reference_text = []
     for facet in facets:
-        reference_text.append(facet)
-
+        #print(facet)
+        reference_text.append(facet.replace("\xa0",""))
+    #reference_text = str(reference_text)
+    #print(reference_text)
     textCount = TextBlob(str(reference_text)).ngrams(n=1)
+    #print(len(reference_text))
+    #print(len(textCount))
     statsfile.write(str(len(textCount)))
     statsfile.write(";")
-
 
     #Lähetetään alkuperäinen teksti PyTLDR ja NamedEntitySummarizer scripteille ja tallennetaan palautetut summaryt muistiin.
     lsa_o_summary = lsa_o.summarize(article.replace("\xa0"," "), length=len(reference_text))
