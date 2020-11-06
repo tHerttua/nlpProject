@@ -9,7 +9,7 @@ from namedEntitySummarizer.NamedEntitySumm import NERSummarizer
 #Initialize the TKinter windows 
 window = Tk()
 window.title("Text Summarizer")
-window.geometry('500x400')
+window.geometry('600x700')
 frame = Frame(window)
 rowIndex = 1
 
@@ -61,8 +61,11 @@ def evaluateText(summary, facets):
     """
     Calculates the rouge scoring and creates the label with content
     """
-    refText = str(facets)
-    evalScore = rouge.rouge_evaluations(summary, refText.replace("\xa0"," "))
+    refText = ""
+    for facet in facets:
+        refText += (" "+facet)
+    refText = refText.replace("\xa0"," ")
+    evalScore = rouge.rouge_evaluations(summary, refText)
     rougeLabel = Label(frame, text="Rouge Results")
     rougeResults = ("Rouge-2 recall: "+ str(round(float(evalScore[0])*100, 2))+"%\n"
                    +"Rouge-2 precision: "+ str(round(float(evalScore[1])*100, 2))+"%\n"
@@ -103,7 +106,7 @@ launchButton.grid(row=rowIndex+2, column=0)
 #Create the field that will contain summary
 summaryLabel = Label(frame, text="Summary")
 summaryLabel.grid(row=rowIndex+6, column=0)
-summaryText = scrolledtext.ScrolledText(frame, width=50, height=10)
+summaryText = scrolledtext.ScrolledText(frame, width=70, height=30)
 summaryText.grid(column=0)
 
 #Start the GUI

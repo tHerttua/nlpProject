@@ -8,7 +8,7 @@ from namedEntitySummarizer.NamedEntitySumm import NERSummarizer
 
 window = Tk()
 window.title("Text Summarizer")
-window.geometry('500x400')
+window.geometry('600x700')
 frame = Frame(window)
 rowIndex = 1
 
@@ -74,7 +74,7 @@ for text, mode, in MODES:
 
 Label(frame, text="Select a summarizer").grid(row=0, column=0)
 
-entry = Entry(frame, width=50)
+entry = Entry(frame, width=70)
 entry.grid(row=rowIndex+1, column=0)
 entry.insert(0, "Write your Daily Mail article URL here")
 
@@ -83,7 +83,7 @@ launchButton.grid(row=rowIndex+2, column=0)
 
 summaryLabel = Label(frame, text="Summary")
 summaryLabel.grid(row=rowIndex+6, column=0)
-summaryText = scrolledtext.ScrolledText(frame, width=50, height=10)
+summaryText = scrolledtext.ScrolledText(frame, width=70, height=30)
 summaryText.grid(column=0)
 
 
