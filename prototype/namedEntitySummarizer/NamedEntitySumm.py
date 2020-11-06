@@ -2,7 +2,6 @@ import spacy
 from textblob import TextBlob #Textblob is used for creating bigrams and trigrams
 import numpy
 import re
-from memory_profiler import profile
 
 # Spacy needs a model for finding named entities
 nlp = spacy.load("en_core_web_sm")
@@ -13,7 +12,6 @@ class NERSummarizer():
         pass
 
     #Printing named entities from the given document
-    @profile
     def list_named_entities(self, document_text):
         doc = nlp(document_text)
         #Create an array for named entities with ORG or PERSON label and populate it
@@ -23,7 +21,6 @@ class NERSummarizer():
                 entity_list.append(ent.text)
         return entity_list
 
-    @profile
     def original_text_sentences(self, original_text):
         textblob = TextBlob(original_text)
         sentence_list = []
@@ -31,26 +28,22 @@ class NERSummarizer():
             sentence_list.append(sentence)
         return sentence_list
 
-    @profile
     def sentence_named_entities(self, sentence_text, named_entity):
         times_found = len(re.findall(named_entity, str(sentence_text)))
         return times_found
 
-    @profile
     def NER_scoring_for_sentence(self, sentence, NE_list):
         NER_score = 0
         for NE in NE_list:
             NER_score = NER_score + self.sentence_named_entities(sentence, NE)
         return NER_score
 
-    @profile
     def NER_scoring(self, sentence_list,NE_list):
         NER_scores = []
         for sentence in sentence_list:
             NER_scores.append(self.NER_scoring_for_sentence(sentence,NE_list))
         return NER_scores
 
-    @profile
     def highest_NER_scores(self, score_list, score_amount):
         s = numpy.array(score_list)
         #Sort the score list by highest score in descending order and store the index in a list
@@ -63,7 +56,6 @@ class NERSummarizer():
             return_list.append(sorted_index_list[i])
         return return_list
 
-    @profile
     def NER_summary(self, sentence_list,score_list):
         #Sort the highest scored sentences to the original order as they appear in the article
         sorted_score_list = numpy.sort(score_list)
@@ -72,7 +64,6 @@ class NERSummarizer():
             NER_summary.append(str(sentence_list[i]))
         return NER_summary
 
-    @profile
     def Named_Entity_Summary(self, article, length):
         sentences = self.original_text_sentences(article)
         sentence_score_list = self.NER_scoring(sentences, self.list_named_entities(article))
