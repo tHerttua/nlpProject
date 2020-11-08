@@ -37,7 +37,7 @@ def summarize(sel):
 
 def runSummarize(sel, data, refSentences):
     """
-    Create summary using a summarizer
+    Create summary using a summarizer selected by the user
     """
     if sel == 1:
         summary = summ.textRank(data, refSentences)
@@ -69,10 +69,10 @@ def evaluateText(summary, facets):
         refText += (" "+facet.replace("\xa0"," "))
     evalScore = rouge.rouge_evaluations(str(summary), str(refText))
     rougeLabel = Label(frame, text="Rouge Results")
-    rougeResults = ("Rouge-2 recall: "+ str(round(float(evalScore[0])*100, 2))+"%\n"
-                   +"Rouge-2 precision: "+ str(round(float(evalScore[1])*100, 2))+"%\n"
-                   +"Rouge-3 recall: "+ str(round(float(evalScore[2])*100, 2))+"%\n"
-                   +"Rouge-3 precision: "+ str(round(float(evalScore[3])*100, 2))+"%\n")
+    rougeResults = ("Rouge-2 recall: "+ str(round(float(evalScore[0]), 2))+"\n"
+                   +"Rouge-2 precision: "+ str(round(float(evalScore[1]), 2))+"\n"
+                   +"Rouge-3 recall: "+ str(round(float(evalScore[2]), 2))+"\n"
+                   +"Rouge-3 precision: "+ str(round(float(evalScore[3]), 2))+"\n")
     rougeLabel['text'] = rougeResults
     rougeLabel.grid(row=rowIndex+5, column=0)
 
