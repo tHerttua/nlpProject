@@ -15,6 +15,8 @@ Links that were used for testing purposes are found under the testingLinkLists d
 pytldr
 beautifulsoup4
 requests
+nltk
+spacy
 
 
 
