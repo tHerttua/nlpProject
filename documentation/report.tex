@@ -62,7 +62,7 @@ Developing of automated systems is dependent of an appropriate evaluation metric
 
 PyTLDR\footnote{https://github.com/jaijuneja/PyTLDR} is an open-source Python module used for extractive document summarization. It includes three implementations of ATS: a TextRank based, a Latent Semantic Analysis based and a sentence relevance score based summarizer. In this work we evaluate the summarization algorithms provided by the PyTLDR module. We also propose a new algorithm based on recognizing named entities using the recognition framework in the spaCy\footnote{https://github.com/explosion/spaCy} module.
 %We use the CNN/Dailymail\footnote{https://github.com/morningmoni/FAR} data set 
-We use articles from the Daily Mail website\footnote{https://dailymail.co.uk} and the standard ROUGE-N evaluation metric to asses the performance of the methods. 
+We use articles from the Daily Mail website\footnote{https://dailymail.co.uk} and the standard ROUGE-N evaluation metric to asses the performance of the methods. The Daily Mail articles usually include bullet points about the article, which can be used as a reference summary. 
 %The algorithm is integrated with the original PyTLDR implementations and their updated performance is evaluated using ROUGE-N. 
 We develop a Graphical User Interface (GUI) for easy utilization of the software, with a focus on the Daily Mail website and its articles.
 
@@ -196,7 +196,9 @@ The second input is the URL field, which defaults to help text ”Write your Dai
 
 The last user input is clicking the ”Submit” button. This button launches the program generating the summary and calculating the ROUGE scores. Under the "Submit" button there is a text label ”Summary” and under it there is a scrollable text field where the generated summary will appear.
 
-After the user has pressed ”Submit” button, the program fetches the article using its IR system, creates a summary of the article contents using the selected summarizer and calculates the ROUGE scores using the bullet points found in the article. Pressing the button then displays the output in two fields under the button. First output is the ROUGE recall and precision values in percentages for both ROUGE-2 and ROUGE-3. This field is only revealed after calculating the values. The generated summary will be inserted in the previously blank text field. The ROUGE values field and the summary field both clean up upon pressing the "Submit" button again.
+After the user has pressed the ”Submit” button, the program fetches the article using its IR system, creates a summary of the article contents using the selected summarizer and calculates the ROUGE scores using the bullet points found in the article. 
+The output is displayed in two fields under the button. 
+First output is the ROUGE recall and precision values in percentages for both ROUGE-2 and ROUGE-3. This field is only revealed after calculating the values. The generated summary will be inserted in the previously blank text field. The ROUGE values field and the summary field both clean up upon pressing the "Submit" button again.
 
 \section{Evaluation}\label{results}
 \subsection{Data set}\label{data}
